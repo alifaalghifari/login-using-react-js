@@ -5,7 +5,9 @@ class Login extends React.Component {
         this.state = {
             name: '',
             password: '',
-            typeP: 'password'
+            typeP: 'password',
+            img: ['show.png', 'hide.png'],
+            imgI: 1
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -24,9 +26,10 @@ class Login extends React.Component {
     handleImg() {
         const node = this.myRef.current.type;
         const value = node === 'password' ? 'text' : 'password';
-
+        const img = this.state.imgI === 0 ? 1 : 0;
         this.setState({
-            typeP: value
+            typeP: value,
+            imgI: img
         })
     }
 
@@ -42,7 +45,7 @@ class Login extends React.Component {
                     <label>
                         <input ref={this.myRef} type={this.state.typeP} name="password" value={this.state.password} onChange={this.handleChange} placeholder="Password" />
                         <span>password</span>
-                        <img className="img" src="img/photo.png" alt="" onClick={this.handleImg} />
+                        <img className="img" src={"img/" + this.state.img[this.state.imgI]} alt="" onClick={this.handleImg} />
                     </label>
                     <input type="submit" value="Submit" />
                 </form>

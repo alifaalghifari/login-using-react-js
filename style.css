@@ -87,11 +87,11 @@ form{
     padding: 3px;
     margin-top: 20px;
     color: #495464;
-    border: 1px solid #495464;
+    border: 1px solid #8bcdcd;
     border-radius: 20px;
     background-color: white;
 
-    font-size: 15px;
+    font-size: 16px;
     transition: .5s;
 }
 
